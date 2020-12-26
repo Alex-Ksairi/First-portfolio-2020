@@ -1,0 +1,696 @@
+/* all imported files */
+@import "./reset";
+@import "./variables";
+@import "./mixins";
+
+
+/* styling starts right below  */
+
+/* navigation bar & navigation */
+body {
+    background-color: #000;
+}
+
+.logo {
+    border-radius: 50%;
+
+    @include mobile {
+        width: 45px;
+        height: 45px;
+    }
+}
+
+.overlay {
+    height: 100%;
+    width: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    transition: 0.5s;
+}
+
+.overlay-content {
+    position: relative;
+    top: 25%;
+    width: 100%;
+    text-align: justify;
+    margin-top: 25px;
+    margin-left: 40%;
+}
+
+.overlay>div a {
+    padding: 6px;
+    text-decoration: none;
+    color: $btn;
+    font-size: 20px;
+    text-transform: uppercase;
+    font-family: $font;
+
+    display: block;
+    transition: 0.3s;
+
+    &:hover,
+    &:focus {
+        width: 25%;
+        color: $hover;
+        border-bottom: 1px solid $hover;
+    }
+
+    @include tablet {
+        font-size: 15px;
+    }
+
+    @include mobile {
+        padding: 3px;
+        font-size: 10px;
+    }
+}
+
+.overlay .overlay-icon a {
+    display: inline;
+
+    &:hover {
+        border: none;
+    }
+}
+
+.icon span:hover {
+    color: $hover;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+    color: $btn;
+
+    &:hover {
+        border: none;
+        color: $hover;
+    }
+
+    @include tablet {
+        font-size: 45px;
+    }
+
+    @include mobile {
+        font-size: 30px;
+        right: 22.5px;
+    }
+}
+
+/* Animation */
+.ani {
+    margin: 0;
+    font-family: $font;
+    font-size: 40px;
+    color: $hover;
+    letter-spacing: 0.7em;
+    text-align: center;
+
+    @include tablet {
+        font-size: 25px;
+    }
+
+    @include mobile {
+        font-size: 15px;
+    }
+}
+
+.ani span {
+    opacity: 0.20;
+}
+
+#I,
+#F,
+#S {
+    opacity: 1;
+    animation: flickerI 2s linear reverse infinite;
+}
+
+#I::after,
+#F::after,
+#S::after {
+    content: '';
+    width: 150%;
+    box-shadow: -35px 0px 60px 8px rgba(255, 255, 255, 1);
+}
+
+#H,
+#O {
+    animation: flickerHO 2s linear reverse infinite;
+    position: relative;
+}
+
+#N::after,
+#N::before {
+    content: ' ';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: -50%;
+    left: 100%;
+    border-radius: 100%;
+    opacity: 0.05;
+    filter: blur(10px);
+}
+
+#O::after {
+    width: 200px;
+    height: 200px;
+    top: -150%;
+    left: -5%;
+    opacity: 0.1;
+    filter: blur(10px);
+}
+
+#H,
+#N,
+#A {
+    animation: flickerAN 2s linear reverse infinite
+}
+
+@keyframes flickerI {
+    0% {
+        opacity: 0.4;
+    }
+
+    5% {
+        opacity: 0.5;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    15% {
+        opacity: 0.85;
+    }
+
+    25% {
+        opacity: 0.5;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    35% {
+        opacity: 0.1;
+    }
+
+    40% {
+        opacity: 0.25;
+    }
+
+    45% {
+        opacity: 0.5;
+    }
+
+    60% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.85;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.5;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes flickerHO {
+    0% {
+        opacity: 0.19;
+    }
+
+    5% {
+        opacity: 0.2;
+    }
+
+    10% {
+        opacity: 0.25;
+    }
+
+    15% {
+        opacity: 0.35;
+    }
+
+    25% {
+        opacity: 0.2;
+    }
+
+    30% {
+        opacity: 0.4;
+    }
+
+    35% {
+        opacity: 0.1;
+    }
+
+    40% {
+        opacity: 0.25;
+    }
+
+    45% {
+        opacity: 0.2;
+    }
+
+    60% {
+        opacity: 0.4;
+    }
+
+    70% {
+        opacity: 0.35;
+    }
+
+    80% {
+        opacity: 0.4;
+    }
+
+    90% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 0.4;
+    }
+}
+
+@keyframes flickerAN {
+    0% {
+        opacity: 0.15;
+    }
+
+    5% {
+        opacity: 0.2;
+    }
+
+    10% {
+        opacity: 0.12;
+    }
+
+    15% {
+        opacity: 0.2;
+    }
+
+    25% {
+        opacity: 0.15;
+    }
+
+    30% {
+        opacity: 0.4;
+    }
+
+    35% {
+        opacity: 0.05;
+    }
+
+    40% {
+        opacity: 0.12;
+    }
+
+    45% {
+        opacity: 0.15;
+    }
+
+    60% {
+        opacity: 0.3;
+    }
+
+    70% {
+        opacity: 0.2;
+    }
+
+    80% {
+        opacity: 0.3;
+    }
+
+    90% {
+        opacity: 0.18;
+    }
+
+    100% {
+        opacity: 0.3;
+    }
+}
+
+@keyframes flickerS {
+    0% {
+        opacity: 0.01;
+    }
+
+    5% {
+        opacity: 0.05;
+    }
+
+    10% {
+        opacity: 0.03;
+    }
+
+    15% {
+        opacity: 0.1;
+    }
+
+    25% {
+        opacity: 0.07;
+    }
+
+    30% {
+        opacity: 0.1;
+    }
+
+    35% {
+        opacity: 0.05;
+    }
+
+    40% {
+        opacity: 0.06;
+    }
+
+    45% {
+        opacity: 0.1;
+    }
+
+    60% {
+        opacity: 0;
+    }
+
+    70% {
+        opacity: 0.1;
+    }
+
+    80% {
+        opacity: 0;
+    }
+
+    90% {
+        opacity: 0.0;
+    }
+
+    100% {
+        opacity: 0.1;
+    }
+}
+
+/* header */
+h2,
+h6 {
+    text-align: center;
+    color: $hover;
+    font-family: $font;
+    letter-spacing: 0.4em;
+    opacity: 0.6;
+
+    @include mobile {
+        font-size: 20px;
+    }
+}
+
+h6 {
+    @include mobile {
+        font-size: 10px;
+    }
+}
+
+#img {
+    width: 100%;
+    height: auto;
+    filter: grayscale(100%);
+
+    &:hover {
+        filter: none;
+        box-shadow: $textShadow;
+        cursor: pointer;
+    }
+}
+
+/* collection */
+.page1 h1, .page2 h1, .page3 h1, .page4 h1, .page5 h1 {
+    @include text ($hover, $font, bold);
+    text-shadow: $textShadow;
+    text-transform: uppercase;
+
+    @include mobile {
+        font-size: 25px;
+    }
+}
+
+.page1 p, .page2 p, .page3 p, .page4 p, .foot p {
+    @include text ($pcolor, $font, 100);
+
+    @include mobile {
+        font-size: 10px;
+    }
+}
+
+.page1 strong, .page2 strong, .page3 strong, .page4 h3 {
+    @include text ($hover, $font, bold);
+}
+
+.page4 h3 {
+    @include mobile {
+        font-size: 15px;
+    }
+}
+
+.fab {
+    @include mobile {
+        font-size: 20px;
+    }
+}
+
+/* cards */
+.position-relative .btnn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.position-relative:hover .btnn {
+    display: block;
+    color: $hover;
+    opacity: 0.5;
+    background-color: transparent;
+}
+
+.position-relative img, .modal-body .modali {
+    filter: grayscale(100%);
+}
+
+.position-relative:hover img,  .modal-body .modali:hover {
+    filter: none;
+}
+
+.carde:hover {
+    box-shadow: $textShadow;
+    transform: scale(1.1);
+}
+
+/* Mode & Fashion */
+.main {
+    width: 100%;
+    height: auto;
+
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 100px 90px repeat(2, 25px) repeat(2, 100px) 80px;
+    gap: 40px;
+
+    grid-template-areas:
+        " b1 b2 b3 b4 "
+        " b5 b2 b3 b4 "
+        " b5 b6 b3 b4 "
+        " b5 b6 b3 b8 "
+        " b5 b6 b7 b8 "
+        " b9 b6 b7 b8 "
+        " b9 b10 b7 b8 ";
+
+        @include tablet {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            grid-template-areas: 
+                    "b1 b2 b3"
+                    "b5 b2 b3"
+                    "b5 b6 b3"
+                    "b5 b6 b4"
+                    "b7 b8 b4"
+                    "b7 b8 b10"
+                    "b9 b8 b10";
+
+        }
+
+        @include mobile {
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 100px 90px repeat(2, 25px) repeat(2, 100px) repeat(2, 80px) ;
+            gap: 15px;
+            grid-template-areas: 
+                    "b1 b2"
+                    "b3 b2"
+                    "b4 b5"
+                    "b4 b5"
+                    "b4 b6"
+                    "b7 b6"
+                    "b7 b8"
+                    "b9 b10";
+        }
+}
+
+.main div {
+    overflow: hidden;
+}
+
+.main img {
+    width: 100%;
+    height: 100%;
+    filter: grayscale(100%);
+
+    &:hover {
+        filter: none;
+    }
+}
+
+.box-1 {
+    grid-area: b1;
+}
+
+.box2 {
+    grid-area: b2;
+}
+
+.box3 {
+    grid-area: b3;
+}
+
+.box4 {
+    grid-area: b4;
+}
+
+.box5 {
+    grid-area: b5;
+}
+
+.box6 {
+    grid-area: b6;
+}
+
+.box7 {
+    grid-area: b7;
+}
+
+.box8 {
+    grid-area: b8;
+}
+
+.box9 {
+    grid-area: b9;
+}
+
+.box10 {
+    grid-area: b10;
+}
+
+/* Make Up */
+.page3 img {
+    filter: grayscale(100%);
+
+    &:hover {
+        filter: none;
+        box-shadow: $textShadow;
+    }
+}
+
+#bttn {
+    background-color: transparent;
+}
+
+.page3 img {
+    @include mobile {
+        margin-bottom: 10px;
+    }
+}
+
+/* Our Team */
+.page4 img {
+    width: 80%;
+    filter: grayscale(100%);
+
+    &:hover {
+        filter: none;
+        box-shadow: $textShadow;
+        cursor: pointer;
+        transition: 0.8s all ease-in-out;
+    }
+}
+
+/* contact */
+input[type=text], input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid $hover;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+    background-color: transparent;
+    color: $pcolor;
+
+    @include mobile {
+        font-size: 15px;
+    }
+}
+
+label {
+    color: $pcolor;
+
+    @include mobile {
+        font-size: 15px;
+    }
+}
+  
+input[type=submit] {
+    background-color: $hover;
+    color: $pcolor;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+
+    @include mobile {
+        font-size: 15px;
+        padding: 10px 15px;
+    }
+}
+  
+input[type=submit]:hover {
+    background-color: $hover;
+}
+  
+.page5 {
+    border-radius: 5px;
+    background-color: transparent;
+    padding: 20px;
+}
+
+.anchor {
+    @include mobile {
+        font-size: 10px;
+    }
+}

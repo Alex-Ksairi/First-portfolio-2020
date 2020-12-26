@@ -1,0 +1,18 @@
+/* mixins here */
+@mixin tablet {
+    @media screen and (max-width: #{$tablet}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: #{$mobile}) {
+        @content;
+    }
+}
+
+@mixin text ($c, $f, $fo) {
+    color: $c;
+    font-family: $f;
+    font-weight: $fo;
+}

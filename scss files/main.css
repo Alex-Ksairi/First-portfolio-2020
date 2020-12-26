@@ -1,0 +1,898 @@
+/* all imported files */
+/* resetting scss file */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap");
+*, *::before, *::after {
+  padding: 0;
+  margin: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* the imported fonts google */
+/* variables here */
+/* mixins here */
+/* styling starts right below  */
+/* navigation bar & navigation */
+body {
+  background-color: #000;
+}
+
+.logo {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 480px) {
+  .logo {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+.overlay {
+  height: 100%;
+  width: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.overlay-content {
+  position: relative;
+  top: 25%;
+  width: 100%;
+  text-align: justify;
+  margin-top: 25px;
+  margin-left: 40%;
+}
+
+.overlay > div a {
+  padding: 6px;
+  text-decoration: none;
+  color: #818181;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-family: "Roboto Mono", monospace;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.overlay > div a:hover, .overlay > div a:focus {
+  width: 25%;
+  color: #438b2d;
+  border-bottom: 1px solid #438b2d;
+}
+
+@media screen and (max-width: 768px) {
+  .overlay > div a {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .overlay > div a {
+    padding: 3px;
+    font-size: 10px;
+  }
+}
+
+.overlay .overlay-icon a {
+  display: inline;
+}
+
+.overlay .overlay-icon a:hover {
+  border: none;
+}
+
+.icon span:hover {
+  color: #438b2d;
+}
+
+.overlay .closebtn {
+  position: absolute;
+  top: 20px;
+  right: 45px;
+  font-size: 60px;
+  color: #818181;
+}
+
+.overlay .closebtn:hover {
+  border: none;
+  color: #438b2d;
+}
+
+@media screen and (max-width: 768px) {
+  .overlay .closebtn {
+    font-size: 45px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .overlay .closebtn {
+    font-size: 30px;
+    right: 22.5px;
+  }
+}
+
+/* Animation */
+.ani {
+  margin: 0;
+  font-family: "Roboto Mono", monospace;
+  font-size: 40px;
+  color: #438b2d;
+  letter-spacing: 0.7em;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .ani {
+    font-size: 25px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .ani {
+    font-size: 15px;
+  }
+}
+
+.ani span {
+  opacity: 0.20;
+}
+
+#I,
+#F,
+#S {
+  opacity: 1;
+  animation: flickerI 2s linear reverse infinite;
+}
+
+#I::after,
+#F::after,
+#S::after {
+  content: '';
+  width: 150%;
+  -webkit-box-shadow: -35px 0px 60px 8px white;
+          box-shadow: -35px 0px 60px 8px white;
+}
+
+#H,
+#O {
+  animation: flickerHO 2s linear reverse infinite;
+  position: relative;
+}
+
+#N::after,
+#N::before {
+  content: ' ';
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: -50%;
+  left: 100%;
+  border-radius: 100%;
+  opacity: 0.05;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+#O::after {
+  width: 200px;
+  height: 200px;
+  top: -150%;
+  left: -5%;
+  opacity: 0.1;
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+#H,
+#N,
+#A {
+  animation: flickerAN 2s linear reverse infinite;
+}
+
+@-webkit-keyframes flickerI {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes flickerI {
+  0% {
+    opacity: 0.4;
+  }
+  5% {
+    opacity: 0.5;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  25% {
+    opacity: 0.5;
+  }
+  30% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.5;
+  }
+  60% {
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.85;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes flickerHO {
+  0% {
+    opacity: 0.19;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@keyframes flickerHO {
+  0% {
+    opacity: 0.19;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.25;
+  }
+  15% {
+    opacity: 0.35;
+  }
+  25% {
+    opacity: 0.2;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.1;
+  }
+  40% {
+    opacity: 0.25;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  60% {
+    opacity: 0.4;
+  }
+  70% {
+    opacity: 0.35;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  90% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.4;
+  }
+}
+
+@-webkit-keyframes flickerAN {
+  0% {
+    opacity: 0.15;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.12;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.12;
+  }
+  45% {
+    opacity: 0.15;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.18;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@keyframes flickerAN {
+  0% {
+    opacity: 0.15;
+  }
+  5% {
+    opacity: 0.2;
+  }
+  10% {
+    opacity: 0.12;
+  }
+  15% {
+    opacity: 0.2;
+  }
+  25% {
+    opacity: 0.15;
+  }
+  30% {
+    opacity: 0.4;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.12;
+  }
+  45% {
+    opacity: 0.15;
+  }
+  60% {
+    opacity: 0.3;
+  }
+  70% {
+    opacity: 0.2;
+  }
+  80% {
+    opacity: 0.3;
+  }
+  90% {
+    opacity: 0.18;
+  }
+  100% {
+    opacity: 0.3;
+  }
+}
+
+@-webkit-keyframes flickerS {
+  0% {
+    opacity: 0.01;
+  }
+  5% {
+    opacity: 0.05;
+  }
+  10% {
+    opacity: 0.03;
+  }
+  15% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.07;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.06;
+  }
+  45% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+@keyframes flickerS {
+  0% {
+    opacity: 0.01;
+  }
+  5% {
+    opacity: 0.05;
+  }
+  10% {
+    opacity: 0.03;
+  }
+  15% {
+    opacity: 0.1;
+  }
+  25% {
+    opacity: 0.07;
+  }
+  30% {
+    opacity: 0.1;
+  }
+  35% {
+    opacity: 0.05;
+  }
+  40% {
+    opacity: 0.06;
+  }
+  45% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0;
+  }
+  70% {
+    opacity: 0.1;
+  }
+  80% {
+    opacity: 0;
+  }
+  90% {
+    opacity: 0.0;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+
+/* header */
+h2,
+h6 {
+  text-align: center;
+  color: #438b2d;
+  font-family: "Roboto Mono", monospace;
+  letter-spacing: 0.4em;
+  opacity: 0.6;
+}
+
+@media screen and (max-width: 480px) {
+  h2,
+  h6 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h6 {
+    font-size: 10px;
+  }
+}
+
+#img {
+  width: 100%;
+  height: auto;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+#img:hover {
+  -webkit-filter: none;
+          filter: none;
+  -webkit-box-shadow: 5px 5px 5px #4b4a4a;
+          box-shadow: 5px 5px 5px #4b4a4a;
+  cursor: pointer;
+}
+
+/* collection */
+.page1 h1, .page2 h1, .page3 h1, .page4 h1, .page5 h1 {
+  color: #438b2d;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+  text-shadow: 5px 5px 5px #4b4a4a;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 480px) {
+  .page1 h1, .page2 h1, .page3 h1, .page4 h1, .page5 h1 {
+    font-size: 25px;
+  }
+}
+
+.page1 p, .page2 p, .page3 p, .page4 p, .foot p {
+  color: #b6d4bf;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 480px) {
+  .page1 p, .page2 p, .page3 p, .page4 p, .foot p {
+    font-size: 10px;
+  }
+}
+
+.page1 strong, .page2 strong, .page3 strong, .page4 h3 {
+  color: #438b2d;
+  font-family: "Roboto Mono", monospace;
+  font-weight: bold;
+}
+
+@media screen and (max-width: 480px) {
+  .page4 h3 {
+    font-size: 15px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .fab {
+    font-size: 20px;
+  }
+}
+
+/* cards */
+.position-relative .btnn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: none;
+}
+
+.position-relative:hover .btnn {
+  display: block;
+  color: #438b2d;
+  opacity: 0.5;
+  background-color: transparent;
+}
+
+.position-relative img, .modal-body .modali {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.position-relative:hover img, .modal-body .modali:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.carde:hover {
+  -webkit-box-shadow: 5px 5px 5px #4b4a4a;
+          box-shadow: 5px 5px 5px #4b4a4a;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+/* Mode & Fashion */
+.main {
+  width: 100%;
+  height: auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  -ms-grid-rows: 100px 90px (25px)[2] (100px)[2] 80px;
+      grid-template-rows: 100px 90px repeat(2, 25px) repeat(2, 100px) 80px;
+  gap: 40px;
+      grid-template-areas: " b1 b2 b3 b4 " " b5 b2 b3 b4 " " b5 b6 b3 b4 " " b5 b6 b3 b8 " " b5 b6 b7 b8 " " b9 b6 b7 b8 " " b9 b10 b7 b8 ";
+}
+
+@media screen and (max-width: 768px) {
+  .main {
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+        grid-template-areas: "b1 b2 b3" "b5 b2 b3" "b5 b6 b3" "b5 b6 b4" "b7 b8 b4" "b7 b8 b10" "b9 b8 b10";
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .main {
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    -ms-grid-rows: 100px 90px (25px)[2] (100px)[2] (80px)[2];
+        grid-template-rows: 100px 90px repeat(2, 25px) repeat(2, 100px) repeat(2, 80px);
+    gap: 15px;
+        grid-template-areas: "b1 b2" "b3 b2" "b4 b5" "b4 b5" "b4 b6" "b7 b6" "b7 b8" "b9 b10";
+  }
+}
+
+.main div {
+  overflow: hidden;
+}
+
+.main img {
+  width: 100%;
+  height: 100%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.main img:hover {
+  -webkit-filter: none;
+          filter: none;
+}
+
+.box-1 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 1;
+  grid-area: b1;
+}
+
+.box2 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 2;
+  grid-area: b2;
+}
+
+.box3 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 3;
+  grid-area: b3;
+}
+
+.box4 {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 4;
+  grid-area: b4;
+}
+
+.box5 {
+  -ms-grid-row: 2;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 1;
+  grid-area: b5;
+}
+
+.box6 {
+  -ms-grid-row: 3;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 2;
+  grid-area: b6;
+}
+
+.box7 {
+  -ms-grid-row: 5;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 3;
+  grid-area: b7;
+}
+
+.box8 {
+  -ms-grid-row: 4;
+  -ms-grid-row-span: 4;
+  -ms-grid-column: 4;
+  grid-area: b8;
+}
+
+.box9 {
+  -ms-grid-row: 6;
+  -ms-grid-row-span: 2;
+  -ms-grid-column: 1;
+  grid-area: b9;
+}
+
+.box10 {
+  -ms-grid-row: 7;
+  -ms-grid-column: 2;
+  grid-area: b10;
+}
+
+/* Make Up */
+.page3 img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.page3 img:hover {
+  -webkit-filter: none;
+          filter: none;
+  -webkit-box-shadow: 5px 5px 5px #4b4a4a;
+          box-shadow: 5px 5px 5px #4b4a4a;
+}
+
+#bttn {
+  background-color: transparent;
+}
+
+@media screen and (max-width: 480px) {
+  .page3 img {
+    margin-bottom: 10px;
+  }
+}
+
+/* Our Team */
+.page4 img {
+  width: 80%;
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+}
+
+.page4 img:hover {
+  -webkit-filter: none;
+          filter: none;
+  -webkit-box-shadow: 5px 5px 5px #4b4a4a;
+          box-shadow: 5px 5px 5px #4b4a4a;
+  cursor: pointer;
+  -webkit-transition: 0.8s all ease-in-out;
+  transition: 0.8s all ease-in-out;
+}
+
+/* contact */
+input[type=text], input[type=email], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #438b2d;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  background-color: transparent;
+  color: #b6d4bf;
+}
+
+@media screen and (max-width: 480px) {
+  input[type=text], input[type=email], select, textarea {
+    font-size: 15px;
+  }
+}
+
+label {
+  color: #b6d4bf;
+}
+
+@media screen and (max-width: 480px) {
+  label {
+    font-size: 15px;
+  }
+}
+
+input[type=submit] {
+  background-color: #438b2d;
+  color: #b6d4bf;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 480px) {
+  input[type=submit] {
+    font-size: 15px;
+    padding: 10px 15px;
+  }
+}
+
+input[type=submit]:hover {
+  background-color: #438b2d;
+}
+
+.page5 {
+  border-radius: 5px;
+  background-color: transparent;
+  padding: 20px;
+}
+
+@media screen and (max-width: 480px) {
+  .anchor {
+    font-size: 10px;
+  }
+}
+/*# sourceMappingURL=main.css.map */
